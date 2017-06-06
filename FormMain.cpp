@@ -78,12 +78,14 @@ void __fastcall TMain::BitBtnGoFullScreenClick(TObject *Sender)
 	else
 	{
 
-		if (!DXVABrightnessEngine.DecreaseBrightness(this->Handle))
-		{
+		//if (!DXVABrightnessEngine.DecreaseBrightness(this->Handle))
+		//{
 
-			MessageBeep(MB_ICONEXCLAMATION);
+		//	MessageBeep(MB_ICONEXCLAMATION);
 
-		}
+		//}
+		SendMessage(Application->Handle, WM_SYSCOMMAND,
+			SC_MONITORPOWER, 2);
 
 	}
 
@@ -147,8 +149,10 @@ void __fastcall TMain::ExitFullScreen()
 	BitBtnGoFullScreen->Visible = true;
 	BitBtnClose->Visible = true;
 	this->WindowState = wsNormal;
-
-	DXVABrightnessEngine.RestoreBrightness();
+		SendMessage(Application->Handle, WM_SYSCOMMAND,
+			SC_MONITORPOWER, -1);
+			//ChangeDisplaySettingsEx
+	//DXVABrightnessEngine.RestoreBrightness();
 	IOCTLBrightnessEngine.RestoreBrightness();
 
 	while (ShowCursor(TRUE) < 0) {};
