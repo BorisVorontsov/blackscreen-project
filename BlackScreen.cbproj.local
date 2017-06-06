@@ -1,26 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.826,D:\Documents\My Programs\BCB\XE3\Black Screen\BlackScreenPCH1.h=D:\Documents\My Programs\BCB\XE3\Black Screen\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.626,D:\Documents\My Programs\BCB\XE3\Black Screen\FormMain.dfm=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.872,D:\Documents\My Programs\BCB\XE3\Black Screen\BlackScreen.cbproj=D:\Documents\My Programs\BCB\XE3\Black Screen\Project1.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.444,C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Project1PCH1.h=D:\Documents\My Programs\BCB\XE3\Black Screen\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.845,D:\Documents\My Programs\BCB\XE3\Black Screen\WMIBrightnessEngine.h=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.813,D:\Documents\My Programs\BCB\XE3\Black Screen\IOCTLBrightnessEngine.cpp=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.800,C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Unit1.dfm=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.499,=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.626,D:\Documents\My Programs\BCB\XE3\Black Screen\FormMain.cpp=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.800,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.h=C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.626,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.h=D:\Documents\My Programs\BCB\XE3\Black Screen\FormMain.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.845,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.h=D:\Documents\My Programs\BCB\XE3\Black Screen\WMIBrightnessEngine.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.133,=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.806,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.cpp=D:\Documents\My Programs\BCB\XE3\Black Screen\DXVABrightnessEngine.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.465,D:\Documents\My Programs\BCB\XE3\Black Screen\Project1.cbproj=C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.356,=C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.872,D:\Documents\My Programs\BCB\XE3\Black Screen\Project1.cbproj=D:\Documents\My Programs\BCB\XE3\Black Screen\BlackScreen.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.806,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.h=D:\Documents\My Programs\BCB\XE3\Black Screen\DXVABrightnessEngine.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.813,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.h=D:\Documents\My Programs\BCB\XE3\Black Screen\IOCTLBrightnessEngine.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.499,=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.845,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.cpp=D:\Documents\My Programs\BCB\XE3\Black Screen\WMIBrightnessEngine.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.626,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.dfm=D:\Documents\My Programs\BCB\XE3\Black Screen\FormMain.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.800,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.cpp=C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.626,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.cpp=D:\Documents\My Programs\BCB\XE3\Black Screen\FormMain.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.831,=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.800,C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Unit1.cpp=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.806,D:\Documents\My Programs\BCB\XE3\Black Screen\DXVABrightnessEngine.h=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.800,C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Unit1.h=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.465,C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Project1.cbproj=D:\Documents\My Programs\BCB\XE3\Black Screen\Project1.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.845,D:\Documents\My Programs\BCB\XE3\Black Screen\WMIBrightnessEngine.cpp=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.806,D:\Documents\My Programs\BCB\XE3\Black Screen\DXVABrightnessEngine.cpp=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.626,D:\Documents\My Programs\BCB\XE3\Black Screen\FormMain.h=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.826,D:\Documents\My Programs\BCB\XE3\Black Screen\Project1PCH1.h=D:\Documents\My Programs\BCB\XE3\Black Screen\BlackScreenPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.444,D:\Documents\My Programs\BCB\XE3\Black Screen\Project1PCH1.h=C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.813,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.cpp=D:\Documents\My Programs\BCB\XE3\Black Screen\IOCTLBrightnessEngine.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.800,D:\Documents\My Programs\BCB\XE3\Black Screen\Unit1.dfm=C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.370,=C:\Users\Boris Vorontsov\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.813,D:\Documents\My Programs\BCB\XE3\Black Screen\IOCTLBrightnessEngine.h=D:\Documents\My Programs\BCB\XE3\Black Screen\Unit2.h</Transaction>
+    <Transaction>2017.06.06 16:31:39.810,D:\temp\projects\Black Screen\trunk\WMIBrightnessEngine.cpp=</Transaction>
   </Transactions>
 </BorlandProject>

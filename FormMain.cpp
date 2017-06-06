@@ -6,7 +6,6 @@
 #include "FormMain.h"
 #include "DXVABrightnessEngine.h"
 #include "IOCTLBrightnessEngine.h"
-#include "WMIBrightnessEngine.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -15,7 +14,6 @@ TMain *Main;
 
 TDXVABrightnessEngine DXVABrightnessEngine;
 TIOCTLBrightnessEngine IOCTLBrightnessEngine;
-TWMIBrightnessEngine WMIBrightnessEngine;
 
 //---------------------------------------------------------------------------
 __fastcall TMain::TMain(TComponent* Owner)
@@ -34,9 +32,7 @@ void __fastcall TMain::FormKeyPress(TObject *Sender, System::WideChar &Key)
 void __fastcall TMain::FormDestroy(TObject *Sender)
 {
 
-	DXVABrightnessEngine.RestoreBrightness();
-	IOCTLBrightnessEngine.RestoreBrightness();
-	WMIBrightnessEngine.RestoreBrightness();
+	//
 
 }
 //---------------------------------------------------------------------------
@@ -85,12 +81,7 @@ void __fastcall TMain::BitBtnGoFullScreenClick(TObject *Sender)
 		if (!DXVABrightnessEngine.DecreaseBrightness(this->Handle))
 		{
 
-			if (!WMIBrightnessEngine.DecreaseBrightness())
-			{
-
-				MessageBeep(MB_ICONEXCLAMATION);
-
-			}
+			MessageBeep(MB_ICONEXCLAMATION);
 
 		}
 
@@ -156,6 +147,9 @@ void __fastcall TMain::ExitFullScreen()
 	BitBtnGoFullScreen->Visible = true;
 	BitBtnClose->Visible = true;
 	this->WindowState = wsNormal;
+
+	DXVABrightnessEngine.RestoreBrightness();
+	IOCTLBrightnessEngine.RestoreBrightness();
 
 	while (ShowCursor(TRUE) < 0) {};
 

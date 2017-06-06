@@ -132,10 +132,6 @@
             <DependentOn>IOCTLBrightnessEngine.h</DependentOn>
             <BuildOrder>4</BuildOrder>
         </CppCompile>
-        <CppCompile Include="WMIBrightnessEngine.cpp">
-            <DependentOn>WMIBrightnessEngine.h</DependentOn>
-            <BuildOrder>5</BuildOrder>
-        </CppCompile>
         <FormResources Include="FormMain.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
