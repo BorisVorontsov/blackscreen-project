@@ -31,7 +31,7 @@ public:
 	TIOCTLBrightnessEngine();
 	~TIOCTLBrightnessEngine();
 
-	bool DecreaseBrightness();
+	bool DecreaseBrightness(int intThreshold);
 	void RestoreBrightness();
 
 private:

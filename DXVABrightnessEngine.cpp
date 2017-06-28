@@ -1,21 +1,25 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
+#include <System.Math.hpp>
 #pragma hdrstop
 
 #include "DXVABrightnessEngine.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
-void errcheck()
+
+#ifdef _DEBUG
+
+void CheckError()
 {
 
-DWORD dwerr = GetLastError();
+	DWORD dwErrCode = GetLastError();
 	LPTSTR lpMsgBuf = NULL;
 	FormatMessage(
         FORMAT_MESSAGE_ALLOCATE_BUFFER |
         FORMAT_MESSAGE_FROM_SYSTEM |
         FORMAT_MESSAGE_IGNORE_INSERTS,
         NULL,
-		dwerr,
+		dwErrCode,
         MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
 		(LPTSTR)&lpMsgBuf,
 		0, NULL );
@@ -24,6 +28,8 @@ DWORD dwerr = GetLastError();
 	MessageBox(NULL, lpMsgBuf, TEXT("Error"), MB_OK);
 
 }
+
+#endif
 //---------------------------------------------------------------------------
 TDXVABrightnessEngine::TDXVABrightnessEngine() : m_pPhysicalMonitors(NULL), m_dwMonitorsCount(0),
 	m_dwOldBrightness(0)
@@ -41,7 +47,7 @@ TDXVABrightnessEngine::~TDXVABrightnessEngine()
 }
 
 //---------------------------------------------------------------------------
-bool TDXVABrightnessEngine::DecreaseBrightness(HWND hMainForm)
+bool TDXVABrightnessEngine::DecreaseBrightness(HWND hMainForm, int intThreshold)
 {
 
 	HMONITOR hVirtualMonitor = MonitorFromWindow(hMainForm, MONITOR_DEFAULTTONEAREST);
@@ -68,17 +74,26 @@ bool TDXVABrightnessEngine::DecreaseBrightness(HWND hMainForm)
 
 						m_dwOldBrightness = dwCurrentBrightness;
 
-						SetMonitorBrightness(m_pPhysicalMonitors[0].hPhysicalMonitor, dwMinimumBrightness);
+						SetMonitorBrightness(m_pPhysicalMonitors[0].hPhysicalMonitor,
+							Max(Min(intThreshold, dwMaximumBrightness), dwMinimumBrightness));
 
 						return true;
 
 					}
-					else errcheck();
+#ifdef _DEBUG
+
+					else CheckError();
+
+#endif
 
 				}
 
 			}
-			else errcheck();
+#ifdef _DEBUG
+
+				else CheckError();
+
+#endif
 
 		}
 

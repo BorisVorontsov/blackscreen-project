@@ -1,5 +1,6 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
+#include <System.Math.hpp>
 #pragma hdrstop
 
 #include "IOCTLBrightnessEngine.h"
@@ -20,7 +21,7 @@ TIOCTLBrightnessEngine::~TIOCTLBrightnessEngine()
 
 }
 //---------------------------------------------------------------------------
-bool TIOCTLBrightnessEngine::DecreaseBrightness()
+bool TIOCTLBrightnessEngine::DecreaseBrightness(int intThreshold)
 {
 
 	DWORD dwBytesReturned = 0;
@@ -35,8 +36,8 @@ bool TIOCTLBrightnessEngine::DecreaseBrightness()
 		{
 
 			DISPLAY_BRIGHTNESS DisplayBrightness;
-			DisplayBrightness.ucACBrightness = 0;
-			DisplayBrightness.ucDCBrightness = 0;
+			DisplayBrightness.ucACBrightness = Max(Min(intThreshold, 100), 0);
+			DisplayBrightness.ucDCBrightness = Max(Min(intThreshold, 100), 0);
 			DisplayBrightness.ucDisplayPolicy = DISPLAYPOLICY_BOTH;
 
 			if (DeviceIoControl(m_hLCDDevice, IOCTL_VIDEO_SET_DISPLAY_BRIGHTNESS, (DISPLAY_BRIGHTNESS*)&DisplayBrightness,

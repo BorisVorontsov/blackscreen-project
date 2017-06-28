@@ -6,6 +6,8 @@
 #include "FormMain.h"
 #include "DXVABrightnessEngine.h"
 #include "IOCTLBrightnessEngine.h"
+#include "DisplayPowerManager.h"
+#include "ApplicationSettings.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -14,11 +16,17 @@ TMain *Main;
 
 TDXVABrightnessEngine DXVABrightnessEngine;
 TIOCTLBrightnessEngine IOCTLBrightnessEngine;
+TDisplayPowerManager DisplayPowerManager;
+
+TApplicationSettings ApplicationSettings;
 
 //---------------------------------------------------------------------------
 __fastcall TMain::TMain(TComponent* Owner)
 	: TForm(Owner)
 {
+
+	ApplicationSettings.ReadSettings();
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TMain::FormKeyPress(TObject *Sender, System::WideChar &Key)
@@ -60,32 +68,34 @@ void __fastcall TMain::FormMove(TMessage &msg)
 void __fastcall TMain::BitBtnGoFullScreenClick(TObject *Sender)
 {
 
-	OSVERSIONINFO OSVI = { 0 };
-	OSVI.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-	GetVersionEx(&OSVI);
-
-	if (OSVI.dwMajorVersion < 6)
+	if (ApplicationSettings.DecreaseBrightness)
 	{
 
-		if (!IOCTLBrightnessEngine.DecreaseBrightness())
+		OSVERSIONINFO OSVI = { 0 };
+		OSVI.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+		GetVersionEx(&OSVI);
+
+		if (OSVI.dwMajorVersion < 6)
 		{
 
-			MessageBeep(MB_ICONEXCLAMATION);
+			if (!IOCTLBrightnessEngine.DecreaseBrightness(ApplicationSettings.BrightnessThreshold))
+				MessageBeep(MB_ICONEXCLAMATION);
 
-        }
+		}
+		else
+		{
+
+			if (!DXVABrightnessEngine.DecreaseBrightness(this->Handle, ApplicationSettings.BrightnessThreshold))
+				MessageBeep(MB_ICONEXCLAMATION);
+
+		}
 
 	}
-	else
+	else if (ApplicationSettings.DisableDisplay)
 	{
 
-		//if (!DXVABrightnessEngine.DecreaseBrightness(this->Handle))
-		//{
-
-		//	MessageBeep(MB_ICONEXCLAMATION);
-
-		//}
-		SendMessage(Application->Handle, WM_SYSCOMMAND,
-			SC_MONITORPOWER, 2);
+		if (!DisplayPowerManager.DisableDisplay())
+			MessageBeep(MB_ICONEXCLAMATION);
 
 	}
 
@@ -149,11 +159,20 @@ void __fastcall TMain::ExitFullScreen()
 	BitBtnGoFullScreen->Visible = true;
 	BitBtnClose->Visible = true;
 	this->WindowState = wsNormal;
-		SendMessage(Application->Handle, WM_SYSCOMMAND,
-			SC_MONITORPOWER, -1);
-			//ChangeDisplaySettingsEx
-	//DXVABrightnessEngine.RestoreBrightness();
-	IOCTLBrightnessEngine.RestoreBrightness();
+
+	if (ApplicationSettings.DecreaseBrightness)
+	{
+
+		DXVABrightnessEngine.RestoreBrightness();
+		IOCTLBrightnessEngine.RestoreBrightness();
+
+	}
+	else if (ApplicationSettings.DisableDisplay)
+	{
+
+		DisplayPowerManager.EnableDisplay();
+
+    }
 
 	while (ShowCursor(TRUE) < 0) {};
 

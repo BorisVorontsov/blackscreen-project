@@ -12,7 +12,7 @@ public:
 	TDXVABrightnessEngine();
 	~TDXVABrightnessEngine();
 
-	bool DecreaseBrightness(HWND hMainForm);
+	bool DecreaseBrightness(HWND hMainForm, int intThreshold);
 	void RestoreBrightness();
 
 private:

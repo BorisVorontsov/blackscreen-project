@@ -6,7 +6,7 @@
         <AppType>Application</AppType>
         <MainSource>BlackScreen.cpp</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
     </PropertyGroup>
@@ -37,6 +37,12 @@
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
@@ -95,6 +101,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Build>2</VerInfo_Build>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <DynamicRTL>false</DynamicRTL>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
@@ -102,7 +109,7 @@
         <ILINK_AdditionalOptions>Dxva2.lib</ILINK_AdditionalOptions>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.1.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.1.0.2;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <Icon_MainIcon>BlackScreen_Icon.ico</Icon_MainIcon>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <UsePackages>false</UsePackages>
@@ -111,13 +118,30 @@
         <Defines>NDEBUG;$(Defines)</Defines>
         <TASM_Debugging>None</TASM_Debugging>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Icon_MainIcon>BlackScreen_Icon.ico</Icon_MainIcon>
+        <ILINK_AdditionalOptions>Dxva2.lib</ILINK_AdditionalOptions>
+        <UsePackages>false</UsePackages>
+        <DynamicRTL>false</DynamicRTL>
+        <LinkPackageStatics>rtl.lib;vcl.lib</LinkPackageStatics>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="ApplicationSettings.cpp">
+            <DependentOn>ApplicationSettings.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
         <CppCompile Include="BlackScreen.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
         <PCHCompile Include="BlackScreenPCH1.h">
             <BuildOrder>1</BuildOrder>
         </PCHCompile>
+        <CppCompile Include="DisplayPowerManager.cpp">
+            <DependentOn>DisplayPowerManager.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
         <CppCompile Include="DXVABrightnessEngine.cpp">
             <DependentOn>DXVABrightnessEngine.h</DependentOn>
             <BuildOrder>3</BuildOrder>
