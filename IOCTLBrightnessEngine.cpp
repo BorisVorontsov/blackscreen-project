@@ -24,6 +24,8 @@ TIOCTLBrightnessEngine::~TIOCTLBrightnessEngine()
 bool TIOCTLBrightnessEngine::DecreaseBrightness(int intThreshold)
 {
 
+	this->RestoreBrightness();
+
 	DWORD dwBytesReturned = 0;
 	HANDLE m_hLCDDevice = CreateFile(L"\\\\.\\LCD", GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING,
 		0, NULL);
@@ -68,6 +70,8 @@ void TIOCTLBrightnessEngine::RestoreBrightness()
 		DWORD dwBytesReturned = 0;
 		DeviceIoControl(m_hLCDDevice, IOCTL_VIDEO_SET_DISPLAY_BRIGHTNESS, (DISPLAY_BRIGHTNESS*)&m_OldDisplayBrightness,
 			sizeof(DISPLAY_BRIGHTNESS), NULL, 0, &dwBytesReturned, NULL);
+
+		memset(&m_OldDisplayBrightness, 0, sizeof(DISPLAY_BRIGHTNESS));
 
 		CloseHandle(m_hLCDDevice);
 

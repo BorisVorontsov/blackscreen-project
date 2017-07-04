@@ -34,7 +34,6 @@ private:	// User declarations
 
 	void __fastcall FormNCHitTest(TMessage &msg);
 	void __fastcall FormMove(TMessage &msg);
-	String __fastcall GetCurrentMonitorName();
 	void __fastcall EnterFullScreen();
 	void __fastcall ExitFullScreen();
 

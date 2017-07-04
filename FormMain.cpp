@@ -8,6 +8,7 @@
 #include "IOCTLBrightnessEngine.h"
 #include "DisplayPowerManager.h"
 #include "ApplicationSettings.h"
+#include "Shared.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -59,7 +60,7 @@ void __fastcall TMain::FormNCHitTest(TMessage &msg)
 void __fastcall TMain::FormMove(TMessage &msg)
 {
 
-	this->LabelMonitorName->Caption = this->GetCurrentMonitorName();
+	this->LabelMonitorName->Caption = GetCurrentMonitorName(this->Handle);
 	TForm::Dispatch(static_cast<void*>(&msg));
 
 }
@@ -94,43 +95,12 @@ void __fastcall TMain::BitBtnGoFullScreenClick(TObject *Sender)
 	else if (ApplicationSettings.DisableDisplay)
 	{
 
-		if (!DisplayPowerManager.DisableDisplay())
+		if (!DisplayPowerManager.DisableDisplay(this->Handle))
 			MessageBeep(MB_ICONEXCLAMATION);
 
 	}
 
 	this->EnterFullScreen();
-
-}
-//---------------------------------------------------------------------------
-String __fastcall TMain::GetCurrentMonitorName()
-{
-
-	HMONITOR hVirtualMonitor = MonitorFromWindow(this->Handle, MONITOR_DEFAULTTONEAREST);
-	MONITORINFOEX MIEX = { 0 };
-	MIEX.cbSize = sizeof(MONITORINFOEX);
-	if (GetMonitorInfo(hVirtualMonitor, &MIEX))
-	{
-
-		DISPLAY_DEVICE DD = { 0 };
-		DD.cb = sizeof(DD);
-		String strResult;
-		int i = 0;
-
-		while(EnumDisplayDevices(MIEX.szDevice, i, &DD, 0))
-		{
-
-			if (!strResult.IsEmpty())
-				strResult += L"\r\n";
-			strResult = strResult + DD.DeviceString;
-			i++;
-
-		}
-
-		return strResult;
-	}
-
-	return L"Unknown display device";
 
 }
 //---------------------------------------------------------------------------

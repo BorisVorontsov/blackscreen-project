@@ -9,10 +9,11 @@ public:
 	TDisplayPowerManager();
 	~TDisplayPowerManager();
 
-	bool DisableDisplay();
+	bool DisableDisplay(HWND hMainForm);
 	void EnableDisplay();
 
 private:
+	String m_strDevice;
 	DEVMODE m_PrevDevMode;
 
 };

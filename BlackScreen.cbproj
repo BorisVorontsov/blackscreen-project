@@ -6,7 +6,7 @@
         <AppType>Application</AppType>
         <MainSource>BlackScreen.cpp</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
     </PropertyGroup>
@@ -155,6 +155,10 @@
         <CppCompile Include="IOCTLBrightnessEngine.cpp">
             <DependentOn>IOCTLBrightnessEngine.h</DependentOn>
             <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Shared.cpp">
+            <DependentOn>Shared.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
         </CppCompile>
         <FormResources Include="FormMain.dfm"/>
         <BuildConfiguration Include="Release">

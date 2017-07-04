@@ -50,6 +50,8 @@ TDXVABrightnessEngine::~TDXVABrightnessEngine()
 bool TDXVABrightnessEngine::DecreaseBrightness(HWND hMainForm, int intThreshold)
 {
 
+	this->RestoreBrightness();
+
 	HMONITOR hVirtualMonitor = MonitorFromWindow(hMainForm, MONITOR_DEFAULTTONEAREST);
 
 	if (GetNumberOfPhysicalMonitorsFromHMONITOR(hVirtualMonitor, &m_dwMonitorsCount))
@@ -112,6 +114,7 @@ void TDXVABrightnessEngine::RestoreBrightness()
 	if (m_dwOldBrightness) {
 
 		SetMonitorBrightness(m_pPhysicalMonitors[0].hPhysicalMonitor, m_dwOldBrightness);
+		m_dwOldBrightness = 0;
 
 	}
 
