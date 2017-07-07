@@ -6,7 +6,6 @@
 #include "FormMain.h"
 #include "DXVABrightnessEngine.h"
 #include "IOCTLBrightnessEngine.h"
-#include "DisplayPowerManager.h"
 #include "ApplicationSettings.h"
 #include "Shared.h"
 //---------------------------------------------------------------------------
@@ -17,9 +16,29 @@ TMain *Main;
 
 TDXVABrightnessEngine DXVABrightnessEngine;
 TIOCTLBrightnessEngine IOCTLBrightnessEngine;
-TDisplayPowerManager DisplayPowerManager;
 
 TApplicationSettings ApplicationSettings;
+
+static TColor BackgroundColors[/*StandardColorsCount*/18] = {
+	clBlack,
+	clMaroon,
+	clGreen,
+	clOlive,
+	clNavy,
+	clPurple,
+	clTeal,
+	clGray,
+	clSilver,
+	clRed,
+	clLime,
+	clYellow,
+	clBlue,
+	clFuchsia,
+	clAqua,
+	clLtGray,
+	clDkGray,
+	clWhite
+};
 
 //---------------------------------------------------------------------------
 __fastcall TMain::TMain(TComponent* Owner)
@@ -28,20 +47,29 @@ __fastcall TMain::TMain(TComponent* Owner)
 
 	ApplicationSettings.ReadSettings();
 
+	this->Color = BackgroundColors[ApplicationSettings.RecentColorIndex];
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TMain::FormKeyPress(TObject *Sender, System::WideChar &Key)
 {
 
-	if ((this->WindowState == wsMaximized) && (Key == VK_ESCAPE))
-		this->ExitFullScreen();
+	if (this->WindowState == wsMaximized)
+	{
+
+		if (Key == VK_ESCAPE)
+			this->ExitFullScreen();
+		else if (Key == VK_SPACE)
+			this->CycleBackgroundForward();
+
+	}
 
 }
 //---------------------------------------------------------------------------
 void __fastcall TMain::FormDestroy(TObject *Sender)
 {
 
-	//
+	ApplicationSettings.WriteSettings();
 
 }
 //---------------------------------------------------------------------------
@@ -65,7 +93,6 @@ void __fastcall TMain::FormMove(TMessage &msg)
 
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TMain::BitBtnGoFullScreenClick(TObject *Sender)
 {
 
@@ -90,13 +117,6 @@ void __fastcall TMain::BitBtnGoFullScreenClick(TObject *Sender)
 				MessageBeep(MB_ICONEXCLAMATION);
 
 		}
-
-	}
-	else if (ApplicationSettings.DisableDisplay)
-	{
-
-		if (!DisplayPowerManager.DisableDisplay(this->Handle))
-			MessageBeep(MB_ICONEXCLAMATION);
 
 	}
 
@@ -137,12 +157,6 @@ void __fastcall TMain::ExitFullScreen()
 		IOCTLBrightnessEngine.RestoreBrightness();
 
 	}
-	else if (ApplicationSettings.DisableDisplay)
-	{
-
-		DisplayPowerManager.EnableDisplay();
-
-    }
 
 	while (ShowCursor(TRUE) < 0) {};
 
@@ -188,4 +202,25 @@ void __fastcall TMain::FormDblClick(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
+void __fastcall TMain::CycleBackgroundForward()
+{
 
+	if ((ApplicationSettings.RecentColorIndex + 1) == ARRAYSIZE(BackgroundColors))
+		ApplicationSettings.RecentColorIndex = 0;
+
+	this->Color = BackgroundColors[ApplicationSettings.RecentColorIndex + 1];
+	ApplicationSettings.RecentColorIndex = ApplicationSettings.RecentColorIndex + 1;
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TMain::CycleBackgroundBackward()
+{
+
+	if ((ApplicationSettings.RecentColorIndex - 1) == 0)
+		ApplicationSettings.RecentColorIndex = ARRAYSIZE(BackgroundColors) - 1;
+
+	this->Color = BackgroundColors[ApplicationSettings.RecentColorIndex - 1];
+	ApplicationSettings.RecentColorIndex = ApplicationSettings.RecentColorIndex - 1;
+
+}
+//---------------------------------------------------------------------------

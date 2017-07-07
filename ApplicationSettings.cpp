@@ -10,7 +10,7 @@
 const String TApplicationSettings::m_strSettingsFileName = L"Settings.ini";
 
 TApplicationSettings::TApplicationSettings() : m_bDecreaseBrightness(false), m_intBrightnessThreshold(0),
-	m_bDisableDisplay(false)
+	m_intRecentColorIndex(0)
 {
 
 	//
@@ -37,7 +37,7 @@ void TApplicationSettings::ReadSettings()
 
 	m_bDecreaseBrightness = pSettings->ReadBool(L"General", L"DecreaseBrightness", false);
 	m_intBrightnessThreshold = pSettings->ReadInteger(L"General", L"BrightnessThreshold", 0);
-	m_bDisableDisplay = pSettings->ReadBool(L"General", L"DisableDisplay", false);
+	m_intRecentColorIndex = pSettings->ReadInteger(L"General", L"RecentColorIndex", 0);
 
 	delete pSettings;
 
@@ -53,7 +53,7 @@ void TApplicationSettings::WriteSettings()
 
 	pSettings->WriteBool(L"General", L"DecreaseBrightness", m_bDecreaseBrightness);
 	pSettings->WriteInteger(L"General", L"BrightnessThreshold", m_intBrightnessThreshold);
-	pSettings->WriteBool(L"General", L"DisableDisplay", m_bDisableDisplay);
+	pSettings->WriteInteger(L"General", L"RecentColorIndex", m_intRecentColorIndex);
 
 	delete pSettings;
 

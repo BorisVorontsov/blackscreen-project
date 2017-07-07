@@ -14,14 +14,14 @@ public:
 
 	__property bool DecreaseBrightness = { read = m_bDecreaseBrightness };
 	__property int BrightnessThreshold = { read = m_intBrightnessThreshold };
-	__property bool DisableDisplay = { read = m_bDisableDisplay };
+	__property int RecentColorIndex = { read = m_intRecentColorIndex, write = m_intRecentColorIndex };
 
 private:
 	static const String m_strSettingsFileName;
 
 	bool m_bDecreaseBrightness;
 	int m_intBrightnessThreshold;
-	bool m_bDisableDisplay;
+	int m_intRecentColorIndex;
 
 };
 //---------------------------------------------------------------------------

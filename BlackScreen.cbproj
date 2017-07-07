@@ -138,10 +138,6 @@
         <PCHCompile Include="BlackScreenPCH1.h">
             <BuildOrder>1</BuildOrder>
         </PCHCompile>
-        <CppCompile Include="DisplayPowerManager.cpp">
-            <DependentOn>DisplayPowerManager.h</DependentOn>
-            <BuildOrder>5</BuildOrder>
-        </CppCompile>
         <CppCompile Include="DXVABrightnessEngine.cpp">
             <DependentOn>DXVABrightnessEngine.h</DependentOn>
             <BuildOrder>3</BuildOrder>
