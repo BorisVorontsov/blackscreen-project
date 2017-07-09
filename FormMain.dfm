@@ -29,7 +29,8 @@ object Main: TMain
     Height = 232
     Alignment = taCenter
     AutoSize = False
-    Color = clWhite
+    Caption = 'Monitor'
+    Color = clBlack
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
     Font.Height = -13

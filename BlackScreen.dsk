@@ -1,49 +1,40 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\physicalmonitorenumerationapi.h',0,1,17,28,32,0,0,,
-File_1=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\winnt.h',0,1,13218,1,13235,0,0,,
-File_2=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\vcl\Vcl.Forms.hpp',0,1,2056,43,2073,0,0,,
-File_3=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\rtl\System.SysUtils.hpp',0,1,2860,49,2865,0,0,,
-File_4=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\winuser.h',0,1,11427,25,11444,0,0,,
-File_5=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\comutil.h',0,1,1771,1,1788,0,0,,
-File_6=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\comdef.h',0,1,21,26,41,0,0,,
-File_7=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\rtl\System.hpp',0,1,1299,1,1316,0,0,,
-File_8=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\rtl\System.Classes.hpp',0,1,36,1,53,0,0,,
-File_9=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\wbemcli.h',0,1,1847,1,1864,0,0,,
-File_10=TSourceModule,'D:\Documents\My Programs\BCB\XE3\Black Screen\BlackScreenPCH1.h',0,1,1,1,1,0,0,,
-File_11=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\crtl\_str.h',0,1,64,1,81,0,0,,
-File_12=TSourceModule,'D:\Work\roboscope\RoboPlugins\USBCam_Plugin\PluginInterface.cpp',0,1,91,72,108,0,0,,
-File_13=TSourceModule,'D:\Work\roboscope\RoboPlugins\USBCam_Plugin\Microsoft\preview.h',0,1,53,62,61,0,0,,
-File_14=TSourceModule,'D:\Work\roboscope\RoboPlugins\USBCam_Plugin\Microsoft\preview.cpp',0,1,692,55,683,0,0,,
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\wingdi.h',0,1,5594,31,5614,0,0,,
+File_1=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\crtl\mem.h',0,1,38,81,54,0,0,,
+File_2=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\physicalmonitorenumerationapi.h',0,1,17,28,32,0,0,,
+File_3=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\winnt.h',0,1,13218,1,13235,0,0,,
+File_4=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\vcl\Vcl.Forms.hpp',0,1,2056,43,2073,0,0,,
+File_5=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\rtl\System.SysUtils.hpp',0,1,2860,49,2865,0,0,,
+File_6=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\comutil.h',0,1,1771,1,1788,0,0,,
+File_7=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\comdef.h',0,1,21,26,41,0,0,,
+File_8=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\rtl\System.hpp',0,1,1299,1,1316,0,0,,
+File_9=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\rtl\System.Classes.hpp',0,1,36,1,53,0,0,,
+File_10=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\wbemcli.h',0,1,1847,1,1864,0,0,,
+File_11=TSourceModule,'D:\Documents\My Programs\BCB\XE3\Black Screen\BlackScreenPCH1.h',0,1,1,1,1,0,0,,
+File_12=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\crtl\_str.h',0,1,64,1,81,0,0,,
+File_13=TSourceModule,'D:\Work\roboscope\RoboPlugins\USBCam_Plugin\PluginInterface.cpp',0,1,91,72,108,0,0,,
+File_14=TSourceModule,'D:\Work\roboscope\RoboPlugins\USBCam_Plugin\Microsoft\preview.h',0,1,53,62,61,0,0,,
 
 [Modules]
-Module0=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DXVABrightnessEngine.cpp
-Module1=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DisplayPowerManager.cpp
-Module2=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\IOCTLBrightnessEngine.cpp
-Module3=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\FormMain.cpp
-Module4=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\BlackScreen.cbproj
-Module5=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\ApplicationSettings.cpp
-Module6=default.htm
-Count=7
+Module0=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\FormMain.cpp
+Module1=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\Shared.cpp
+Module2=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\BlackScreen.cbproj
+Module3=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\ApplicationSettings.cpp
+Module4=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DXVABrightnessEngine.cpp
+Module5=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\IOCTLBrightnessEngine.cpp
+Module6=c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\winuser.h
+Module7=default.htm
+Count=8
 EditWindowCount=1
-
-[D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DXVABrightnessEngine.cpp]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DisplayPowerManager.cpp]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\IOCTLBrightnessEngine.cpp]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
 
 [D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\FormMain.cpp]
 ModuleType=TSourceModule
 FormState=1
+FormOnTop=0
+
+[D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\Shared.cpp]
+ModuleType=TSourceModule
+FormState=0
 FormOnTop=0
 
 [D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\BlackScreen.cbproj]
@@ -54,12 +45,27 @@ ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
 
+[D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DXVABrightnessEngine.cpp]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\IOCTLBrightnessEngine.cpp]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\winuser.h]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
 [default.htm]
 ModuleType=TURLModule
 
 [EditWindow0]
-ViewCount=7
-CurrentEditView=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DXVABrightnessEngine.cpp
+ViewCount=8
+CurrentEditView=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\FormMain.cpp
 View0=0
 View1=1
 View2=2
@@ -67,6 +73,7 @@ View3=3
 View4=4
 View5=5
 View6=6
+View7=7
 PercentageSizes=1
 Create=1
 Visible=1
@@ -103,15 +110,26 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\FormMain.cpp
-CursorX=111
-CursorY=88
-TopLine=67
+CursorX=37
+CursorY=55
+TopLine=195
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\FormMain.cpp
 
 [View2]
+CustomEditViewType=TEditView
+Module=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\Shared.cpp
+CursorX=78
+CursorY=43
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\Shared.cpp
+
+[View3]
 CustomEditViewType=TEditView
 Module=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\BlackScreen.cpp
 CursorX=1
@@ -122,7 +140,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\BlackScreen.cpp
 
-[View3]
+[View4]
 CustomEditViewType=TEditView
 Module=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\ApplicationSettings.cpp
 CursorX=80
@@ -133,33 +151,33 @@ Elisions=
 Bookmarks=
 EditViewName=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\ApplicationSettings.cpp
 
-[View4]
+[View5]
 CustomEditViewType=TEditView
 Module=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DXVABrightnessEngine.cpp
-CursorX=48
-CursorY=41
-TopLine=31
+CursorX=31
+CursorY=117
+TopLine=40
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DXVABrightnessEngine.cpp
 
-[View5]
+[View6]
 CustomEditViewType=TEditView
-Module=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DisplayPowerManager.cpp
-CursorX=13
-CursorY=12
-TopLine=4
+Module=c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\winuser.h
+CursorX=1
+CursorY=10986
+TopLine=10969
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DisplayPowerManager.cpp
+EditViewName=c:\program files (x86)\embarcadero\rad studio\10.0\include\windows\sdk\winuser.h
 
-[View6]
+[View7]
 CustomEditViewType=TEditView
 Module=D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\IOCTLBrightnessEngine.cpp
-CursorX=66
-CursorY=45
+CursorX=51
+CursorY=77
 TopLine=52
 LeftCol=1
 Elisions=
@@ -182,18 +200,19 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=8297
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=8297
+ClientHeight=1071
 TBDockHeight=220
 LRDockWidth=13602
 Dockable=1
 StayOnTop=0
 
 [Breakpoints]
-Count=0
+Count=1
+Breakpoint0='D:\Documents\My Programs\BCB\XE3\Black Screen\trunk\DisplayPowerManager.cpp',74,'',0,1,'',1,0,0,'',1,'','','',0,''
 
 [EmbarcaderoWin32Debugger_AddressBreakpoints]
 Count=0
@@ -249,12 +268,12 @@ State=0
 Left=0
 Top=728
 Width=2767
-Height=3489
+Height=3352
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2767
-ClientHeight=3489
-TBDockHeight=3489
+ClientHeight=3352
+TBDockHeight=3352
 LRDockWidth=2767
 Dockable=1
 StayOnTop=0
@@ -348,11 +367,11 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=8297
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=8297
+ClientHeight=1071
 TBDockHeight=412
 LRDockWidth=4949
 Dockable=1
@@ -367,11 +386,11 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=8297
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=8297
+ClientHeight=1071
 TBDockHeight=220
 LRDockWidth=7408
 Dockable=1
@@ -390,11 +409,11 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=8297
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=8297
+ClientHeight=1071
 TBDockHeight=1538
 LRDockWidth=3485
 Dockable=1
@@ -409,11 +428,11 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=8297
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=8297
+ClientHeight=1071
 TBDockHeight=2060
 LRDockWidth=3485
 Dockable=1
@@ -490,8 +509,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=0
-Top=0
+Left=-1055
+Top=-101
 Width=7152
 Height=4876
 MaxLeft=-1
@@ -547,8 +566,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=0
-Top=0
+Left=-1055
+Top=-101
 Width=5307
 Height=4876
 MaxLeft=-1
@@ -626,11 +645,11 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=8297
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=8297
+ClientHeight=1071
 TBDockHeight=1552
 LRDockWidth=8741
 Dockable=1
@@ -719,12 +738,12 @@ State=0
 Left=0
 Top=23
 Width=3821
-Height=8640
+Height=1415
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=8640
-TBDockHeight=8640
+ClientHeight=1415
+TBDockHeight=1415
 LRDockWidth=3821
 Dockable=1
 StayOnTop=0

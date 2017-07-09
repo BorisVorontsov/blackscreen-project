@@ -3,7 +3,7 @@
 #ifndef SharedH
 #define SharedH
 
-String GetCurrentMonitorName(HWND hMainForm);
+void GetCurrentMonitorName(HWND hMainForm, String& strName);
 
 //---------------------------------------------------------------------------
 #endif

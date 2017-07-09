@@ -36,8 +36,7 @@ private:	// User declarations
 	void __fastcall FormMove(TMessage &msg);
 	void __fastcall EnterFullScreen();
 	void __fastcall ExitFullScreen();
-	void __fastcall CycleBackgroundForward();
-    void __fastcall CycleBackgroundBackward();
+	void __fastcall CycleBackground();
 
 public:		// User declarations
 	__fastcall TMain(TComponent* Owner);

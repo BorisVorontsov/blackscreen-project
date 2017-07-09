@@ -5,7 +5,10 @@
 #include "Shared.h"
 //---------------------------------------------------------------------------
 
-String GetCurrentMonitorName(HWND hMainForm)
+#pragma package(smart_init)
+
+//---------------------------------------------------------------------------
+void GetCurrentMonitorName(HWND hMainForm, String& strName)
 {
 
 	HMONITOR hVirtualMonitor = MonitorFromWindow(hMainForm, MONITOR_DEFAULTTONEAREST);
@@ -29,11 +32,12 @@ String GetCurrentMonitorName(HWND hMainForm)
 
 		}
 
-		return strResult;
+		strName = strResult;
+
+		return;
 	}
 
-	return L"Unknown display device";
+	strName = L"Unknown display device";
 
 }
-
-#pragma package(smart_init)
+//---------------------------------------------------------------------------

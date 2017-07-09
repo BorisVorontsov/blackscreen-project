@@ -60,7 +60,7 @@ void __fastcall TMain::FormKeyPress(TObject *Sender, System::WideChar &Key)
 		if (Key == VK_ESCAPE)
 			this->ExitFullScreen();
 		else if (Key == VK_SPACE)
-			this->CycleBackgroundForward();
+			this->CycleBackground();
 
 	}
 
@@ -88,7 +88,9 @@ void __fastcall TMain::FormNCHitTest(TMessage &msg)
 void __fastcall TMain::FormMove(TMessage &msg)
 {
 
-	this->LabelMonitorName->Caption = GetCurrentMonitorName(this->Handle);
+	String strName;
+	GetCurrentMonitorName(this->Handle, strName);
+	this->LabelMonitorName->Caption = strName;
 	TForm::Dispatch(static_cast<void*>(&msg));
 
 }
@@ -202,25 +204,15 @@ void __fastcall TMain::FormDblClick(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
-void __fastcall TMain::CycleBackgroundForward()
+void __fastcall TMain::CycleBackground()
 {
 
-	if ((ApplicationSettings.RecentColorIndex + 1) == ARRAYSIZE(BackgroundColors))
-		ApplicationSettings.RecentColorIndex = 0;
+	if ((ApplicationSettings.RecentColorIndex + 1) == static_cast<int>(ARRAYSIZE(BackgroundColors)))
+		ApplicationSettings.RecentColorIndex = -1;
 
 	this->Color = BackgroundColors[ApplicationSettings.RecentColorIndex + 1];
 	ApplicationSettings.RecentColorIndex = ApplicationSettings.RecentColorIndex + 1;
 
 }
 //---------------------------------------------------------------------------
-void __fastcall TMain::CycleBackgroundBackward()
-{
 
-	if ((ApplicationSettings.RecentColorIndex - 1) == 0)
-		ApplicationSettings.RecentColorIndex = ARRAYSIZE(BackgroundColors) - 1;
-
-	this->Color = BackgroundColors[ApplicationSettings.RecentColorIndex - 1];
-	ApplicationSettings.RecentColorIndex = ApplicationSettings.RecentColorIndex - 1;
-
-}
-//---------------------------------------------------------------------------
